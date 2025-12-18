@@ -75,4 +75,4 @@ jobs:
       - name: Show build script file
         run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy application
-        run: echo "Deploying application..."
+        run: echo "(Fake) deploying application..."
