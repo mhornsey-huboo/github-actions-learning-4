@@ -8,6 +8,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install dependencies
         run: pnpm install
       - name: Run linter
@@ -20,6 +25,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install dependencies
         run: pnpm install
       - name: Run tests
@@ -34,6 +44,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install dependencies
         run: pnpm install
       - name: Build
